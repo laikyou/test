@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>学生档案管理</title>
+        <link rel="stylesheet" href="../css/index.css" />
+        <link rel="stylesheet" href="../css/student_archive.css" />
+        <!-- <script src="../js/index.js"></script> -->
+        <script src="../js/student_archive.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <!-- 头部 -->
+            <div class="header" id="goToTop">
+                <div class="system_name" id="homeLink">教务系统</div>
+                <div class="login_info" id="loginInfo">
+                    <!-- 初始显示登录按钮 -->
+                    <button class="login_button" id="login_button">登录</button>
+                    <!-- 写到这里，要解决子页面顶部栏的姓名那里“退出登录”的点击事件，要设置js -->
+
+                    <!-- 登录后显示用户名和下拉菜单 -->
+                    <div class="user_profile hidden" id="userProfile">
+                        <span class="username" id="displayName">姓名</span>
+                        <div class="dropdown_menu" id="dropdownMenu">
+                            <button class="logout_button" id="logoutButton">
+                                退出登录
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="info">
+                <!-- 个人校内信息 -->
+                <div class="section">
+                    <div class="section_title">个人校内信息</div>
+                    <div class="info_grid">
+                        <div class="info_row">
+                            <div class="info_label">学号</div>
+                            <div
+                                class="info_value editable"
+                                data-key="studentId"
+                            ></div>
+                        </div>
+                        <div class="info_row">
+                            <div class="info_label">院系名称</div>
+                            <div
+                                class="info_value editable"
+                                data-key="department"
+                            ></div>
+                        </div>
+                        <div class="info_row">
+                            <div class="info_label">班级</div>
+                            <div
+                                class="info_value editable"
+                                data-key="className"
+                            ></div>
+                        </div>
+                        <div class="info_row">
+                            <div class="info_label">所在校区</div>
+                            <div
+                                class="info_value editable"
+                                data-key="campus"
+                            ></div>
+                        </div>
+                        <div class="info_row">
+                            <div class="info_label">姓名拼音</div>
+                            <div
+                                class="info_value editable"
+                                data-key="namePinyin"
+                            ></div>
+                        </div>
+                        <div class="info_row">
+                            <div class="info_label">英文姓名</div>
+                            <div
+                                class="info_value editable"
+                                data-key="englishName"
+                            ></div>
+                        </div>
+                        <div class="info_row">
+                            <div class="info_label">性别</div>
+                            <div class="info_value" data-key="gender"></div>
+                        </div>
+                        <div class="info_row">
+                            <div class="info_label">专业</div>
+                            <div
+                                class="info_value editable"
+                                data-key="major"
+                            ></div>
+                        </div>
+                        <div class="info_row">
+                            <div class="info_label">所在年级</div>
+                            <div
+                                class="info_value editable"
+                                data-key="grade"
+                            ></div>
+                        </div>
+                        <div class="info_row">
+                            <div class="info_label">学生状态</div>
+                            <div
+                                class="info_value editable"
+                                data-key="status"
+                            ></div>
+                        </div>
+                        <div class="info_row">
+                            <div class="info_label">联系电话</div>
+                            <div
+                                class="info_value editable"
+                                data-key="phone"
+                            ></div>
+                        </div>
+                        <div class="info_row">
+                            <div class="info_label">联系QQ</div>
+                            <div
+                                class="info_value editable"
+                                data-key="qq"
+                            ></div>
+                        </div>
+                        <div class="info_row">
+                            <div class="info_label">EMAIL</div>
+                            <div
+                                class="info_value editable"
+                                data-key="email"
+                            ></div>
+                        </div>
+                        <div class="info_row">
+                            <div class="info_label">入学年份</div>
+                            <div
+                                class="info_value editable"
+                                data-key="enrollmentYear"
+                            ></div>
+                        </div>
+                        <div class="info_row">
+                            <div class="info_label">外语语种</div>
+                            <div
+                                class="info_value editable"
+                                data-key="foreignLanguage"
+                            ></div>
+                        </div>
+                        <div class="info_row">
+                            <div class="info_label">辅修专业</div>
+                            <div
+                                class="info_value editable"
+                                data-key="minor"
+                            ></div>
+                        </div>
+                        <div class="info_row">
+                            <div class="info_label">学籍状态</div>
+                            <div
+                                class="info_value editable"
+                                data-key="status"
+                            ></div>
+                        </div>
+                        <div class="info_row">
+                            <div class="info_label">银行帐号</div>
+                            <div
+                                class="info_value editable"
+                                data-key="bankAccount"
+                            ></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 个人生源信息 -->
+                <div class="section">
+                    <div class="section_title">个人生源信息</div>
+                    <div class="info_grid">
+                        <div class="info_row">
+                            <div class="info_label">考生号</div>
+                            <div
+                                class="info_value editable"
+                                data-key="candidateNumber"
+                            ></div>
+                        </div>
+                        <div class="info_row">
+                            <div class="info_label">曾用名</div>
+                            <div
+                                class="info_value editable"
+                                data-key="formerName"
+                            ></div>
+                        </div>
+                        <div class="info_row">
+                            <div class="info_label">性别</div>
+                            <div class="info_value" data-key="gender"></div>
+                        </div>
+                        <div class="info_row">
+                            <div class="info_label">出生日期</div>
+                            <div
+                                class="info_value editable"
+                                data-key="birthDate"
+                            ></div>
+                        </div>
+                        <div class="info_row">
+                            <div class="info_label">入学日期</div>
+                            <div
+                                class="info_value editable"
+                                data-key="enrollmentDate"
+                            ></div>
+                        </div>
+                        <div class="info_row">
+                            <div class="info_label">民族</div>
+                            <div
+                                class="info_value editable"
+                                data-key="ethnicity"
+                            ></div>
+                        </div>
+                        <div class="info_row">
+                            <div class="info_label">政治面貌</div>
+                            <div
+                                class="info_value editable"
+                                data-key="politicalStatus"
+                            ></div>
+                        </div>
+                        <div class="info_row">
+                            <div class="info_label">证件类型</div>
+                            <div
+                                class="info_value editable"
+                                data-key="idType"
+                            ></div>
+                        </div>
+                        <div class="info_row">
+                            <div class="info_label">乘车区间起始站</div>
+                            <div
+                                class="info_value editable"
+                                data-key="departureStation"
+                            ></div>
+                        </div>
+                        <div class="info_row">
+                            <div class="info_label">家庭地址</div>
+                            <div
+                                class="info_value editable"
+                                data-key="homeAddress"
+                            ></div>
+                        </div>
+                        <div class="info_row">
+                            <div class="info_label">来源省份</div>
+                            <div
+                                class="info_value editable"
+                                data-key="province"
+                            ></div>
+                        </div>
+                        <div class="info_row">
+                            <div class="info_label">家庭电话</div>
+                            <div
+                                class="info_value editable"
+                                data-key="homePhone"
+                            ></div>
+                        </div>
+                        <div class="info_row">
+                            <div class="info_label">证件号码</div>
+                            <div
+                                class="info_value editable"
+                                data-key="idNumber"
+                            ></div>
+                        </div>
+                        <div class="info_row">
+                            <div class="info_label">乘车区间终点站</div>
+                            <div
+                                class="info_value editable"
+                                data-key="destinationStation"
+                            ></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

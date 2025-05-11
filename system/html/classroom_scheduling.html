@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>教室使用情况查询</title>
+    <link rel="stylesheet" href="../css/classroom_scheduling.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/student_archive.css">
+
+</head>
+<body>
+<!-- 头部 -->
+ <div class="header" id="goToTop">
+    <div class="system_name" id="homeLink">教务系统</div>
+    <div class="login_info" id="loginInfo">
+        <!-- 初始显示登录按钮 -->
+        <button class="login_button" id="login_button">登录</button>
+        <!-- 写到这里，要解决子页面顶部栏的姓名那里“退出登录”的点击事件，要设置js -->
+
+        <!-- 登录后显示用户名和下拉菜单 -->
+        <div class="user_profile hidden" id="userProfile">
+            <span class="username" id="displayName">姓名</span>
+            <div class="dropdown_menu" id="dropdownMenu">
+                <button class="logout_button" id="logoutButton">
+                    退出登录
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="container1">
+        <h1>教室使用情况查询</h1>
+        <div class="filter-group">
+            <label for="building">教学楼：</label>
+            <select id="building" required>
+                <option value="">请选择教学楼</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="date">日期：</label>
+            <input type="date" id="date" disabled required>
+        </div>
+        <div id="tableContainer"></div>
+    </div>
+    <script src="../js/classroom_scheduling.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/student_archive.js"></script>
+</body>
+</html>
